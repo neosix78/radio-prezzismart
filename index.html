@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff6b00">
+    <meta name="description" content="Radio Prezzismart - Ascolta la tua radio in streaming">
+    <title>Radio Prezzismart</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/radio-prezzismart/manifest.json">
+    
+    <!-- Icone -->
+    <link rel="icon" type="image/svg+xml" href="/radio-prezzismart/icon.svg">
+    <link rel="apple-touch-icon" href="/radio-prezzismart/icon-192.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/radio-prezzismart/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header con logo -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" class="logo-icon">
+                        <circle cx="50" cy="50" r="45" fill="#ff6b00"/>
+                        <circle cx="50" cy="50" r="20" fill="#fff"/>
+                        <circle cx="50" cy="50" r="8" fill="#ff6b00"/>
+                        <line x1="50" y1="5" x2="50" y2="20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="50" y1="80" x2="50" y2="95" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="5" y1="50" x2="20" y2="50" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="80" y1="50" x2="95" y2="50" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h1>Radio Prezzismart</h1>
+                <p class="tagline">La tua musica, sempre con te</p>
+            </div>
+        </header>
+
+        <!-- Visualizzatore audio animato -->
+        <div class="visualizer" id="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Stato della riproduzione -->
+        <div class="status" id="status">
+            <span class="status-dot"></span>
+            <span class="status-text">Pronto per riprodurre</span>
+        </div>
+
+        <!-- Pulsante Play/Pause principale -->
+        <div class="player-controls">
+            <button class="play-btn" id="playBtn" aria-label="Riproduci">
+                <svg class="play-icon" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="pause-icon" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Informazioni traccia -->
+        <div class="track-info">
+            <div class="track-marquee">
+                <span id="trackText">🎵 Radio Prezzismart in diretta streaming</span>
+            </div>
+        </div>
+
+        <!-- Volume -->
+        <div class="volume-control">
+            <svg viewBox="0 0 24 24" class="volume-icon">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+            </svg>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+        </div>
+
+        <!-- Installa app (mostrato solo se supportato) -->
+        <button class="install-btn" id="installBtn" style="display: none;">
+            📲 Installa App
+        </button>
+    </div>
+
+    <!-- Audio element nascosto -->
+    <audio id="audioPlayer" preload="none"></audio>
+
+    <script src="/radio-prezzismart/app.js"></script>
+</body>
+</html>

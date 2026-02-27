@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b00"/>
+      <stop offset="100%" style="stop-color:#e65100"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9800"/>
+      <stop offset="100%" style="stop-color:#ff6b00"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sfondo cerchio -->
+  <circle cx="256" cy="256" r="240" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#ff9800" stroke-width="4" opacity="0.3"/>
+  
+  <!-- Cerchi concentrici (onde radio) -->
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#fff" stroke-width="8" opacity="0.4"/>
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#fff" stroke-width="6" opacity="0.5"/>
+  <circle cx="256" cy="256" r="80" fill="none" stroke="#fff" stroke-width="5" opacity="0.6"/>
+  
+  <!-- Cerchio centrale -->
+  <circle cx="256" cy="256" r="50" fill="#fff"/>
+  <circle cx="256" cy="256" r="25" fill="url(#bg)"/>
+  
+  <!-- Linee antenna -->
+  <line x1="256" y1="50" x2="256" y2="110" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <line x1="256" y1="402" x2="256" y2="462" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <line x1="50" y1="256" x2="110" y2="256" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <line x1="402" y1="256" x2="462" y2="256" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Puntini agli estremi -->
+  <circle cx="256" cy="50" r="15" fill="#fff"/>
+  <circle cx="256" cy="462" r="15" fill="#fff"/>
+  <circle cx="50" cy="256" r="15" fill="#fff"/>
+  <circle cx="462" cy="256" r="15" fill="#fff"/>
+</svg>
