@@ -235,9 +235,9 @@ if ('mediaSession' in navigator) {
         artist: 'Diretta Streaming',
         album: 'Radio Prezzismart',
         artwork: [
-            { src: '/radio-prezzismart/icon-96.png', sizes: '96x96', type: 'image/png' },
-            { src: '/radio-prezzismart/icon-192.png', sizes: '192x192', type: 'image/png' },
-            { src: '/radio-prezzismart/icon-512.png', sizes: '512x512', type: 'image/png' }
+            { src: 'icon-96.png', sizes: '96x96', type: 'image/png' },
+            { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
+            { src: 'icon-512.png', sizes: '512x512', type: 'image/png' }
         ]
     });
     

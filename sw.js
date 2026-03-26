@@ -2,15 +2,14 @@
  * Service Worker - Radio Prezzismart PWA
  */
 
-const CACHE_NAME = 'radio-prezzismart-v1';
-const BASE_PATH = '/radio-prezzismart';
+const CACHE_NAME = 'radio-prezzismart-v2';
 const STATIC_ASSETS = [
-    BASE_PATH + '/',
-    BASE_PATH + '/index.html',
-    BASE_PATH + '/style.css',
-    BASE_PATH + '/app.js',
-    BASE_PATH + '/manifest.json',
-    BASE_PATH + '/icon.svg'
+    './',
+    './index.html',
+    './style.css',
+    './app.js',
+    './manifest.json',
+    './icon.svg'
 ];
 
 // Installazione - cache assets statici
@@ -55,8 +54,8 @@ self.addEventListener('fetch', (event) => {
         return;
     }
     
-    // Gestisci solo richieste dello stesso dominio e path base
-    if (!url.pathname.startsWith(BASE_PATH)) {
+    // Gestisci solo richieste dello stesso dominio
+    if (url.origin !== self.location.origin) {
         return;
     }
     
