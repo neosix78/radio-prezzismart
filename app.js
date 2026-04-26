@@ -179,8 +179,16 @@ function releaseWakeLock() {
 function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
-            .then(reg => console.log('✅ Service Worker registrato'))
-            .catch(err => console.log('❌ SW registration failed:', err));
+            .then(reg => {
+                reg.update();
+                reg.addEventListener('updatefound', () => {
+                    const sw = reg.installing;
+                    if (sw) sw.addEventListener('statechange', () => {
+                        if (sw.state === 'activated') location.reload();
+                    });
+                });
+            })
+            .catch(err => console.log('SW registration failed:', err));
     }
 }
 
